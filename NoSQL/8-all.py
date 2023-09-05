@@ -7,5 +7,4 @@ def list_all(mongo_collection):
     list = []
     for x in mongo_collection.find():
         list.append(x)
-
-    print(list)
+    return list
