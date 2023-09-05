@@ -1,0 +1,10 @@
+// comment
+
+let query = {
+    name: "Holberton school"
+}
+
+db.school.insert(query)
+
+
+
