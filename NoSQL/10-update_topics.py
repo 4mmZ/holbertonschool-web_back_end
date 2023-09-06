@@ -7,6 +7,7 @@ from pymongo import MongoClient
 
 def update_topics(mongo_collection, name, topics):
     """Python function that changes all topics of a school document based on the name"""
-    options = {}
-    result = mongo_collection.update_one({"name": name}, {"$set": {"topics": topics}}, **options)
+    filter_query = {"name": name}
+    update_operation = {"$set": {"topics": topics}}
+    result = mongo_collection.update_one(filter_query, update_operation)
     return result
