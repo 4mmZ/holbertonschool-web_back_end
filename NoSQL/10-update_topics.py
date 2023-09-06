@@ -9,5 +9,5 @@ def update_topics(mongo_collection, name, topics):
     """Python function that changes all topics of a school document based on the name"""
     filter_query = {"name": name}
     update_operation = {"$set": {"topics": topics}}
-    result = mongo_collection.update_one(filter_query, update_operation)
+    result = mongo_collection.update_many(filter_query, update_operation)
     return result
