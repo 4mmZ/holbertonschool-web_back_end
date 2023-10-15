@@ -7,6 +7,11 @@ import random
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """ """
-    coroutine_list = [wait_random(max_delay) for _ in range(n)]
-    results = await asyncio.gather(*coroutine_list)
+    results = []
+    
+    async def wait_and_append(delay: int):
+        result = await wait_random(max_delay)
+        results.append(result)
+    
+    await asyncio.gather(*(wait_and_append(i) for i in range(n)))
     return results
