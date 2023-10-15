@@ -6,7 +6,6 @@ import random
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-
 def measure_time(n: int = 0, max_delay: int = 10) -> float:
     """ Create a measure_time function with integers
     n and max_delay as arguments that measures the total
