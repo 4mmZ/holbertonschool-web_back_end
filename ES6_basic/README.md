@@ -1,1 +1,1 @@
-e6s basic
+e6 basics
